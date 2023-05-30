@@ -1,3 +1,3 @@
-for i in range(3,100,3):
+for i in range(0,101,3):
     print(i, end=" ")
     pass

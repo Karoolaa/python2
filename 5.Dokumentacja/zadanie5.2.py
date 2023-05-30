@@ -1,20 +1,21 @@
 def dodawanie(a: float,b: float) ->None:
+    """Wykonuje dodawanie"""
     return a+b
-"""Wykonuje dodawanie"""
 
 def odejmowanie(a,b) ->None:
+    """wykonuje odejmowanie"""
     return a-b
-"""wykonuje odejmowanie"""
 
 def mnozenie(a,b) ->None:
+    """Wykonuje mnozenie"""
     return a*b
-"""Wykonuje mnozenie"""
 
 def dzielenie(a,b) ->None:
     if b == 0:
         raise ValueError("Nie mozna dzielic przez 0")
+    """Wykonuje dzielenie"""
     return a/b
-"""Wykonuje dzielenie"""
+
 
 while True:
     print("Wybierz działanie")
