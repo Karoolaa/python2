@@ -36,7 +36,7 @@ class Wieloslad(Pojazd):
         self.liczba_kol = liczba_kol
 
 
-# Przykładowe użycie
+
 jednoslad = Jednoslad("Rowerek", 2022, "Rower")
 jednoslad.informacje()
 jednoslad.wypozycz()

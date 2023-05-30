@@ -1,17 +1,33 @@
 from os import path
 
+def count_words(filename):
+    with open(filename, 'r', encoding='utf-8') as file:
+        content = file.read()
+        word_count = len(content.split())
+        return word_count
+
 dir_path = path.dirname(__file__)
-filname="tekst.txt"
-data_path=path.join(dir_path, filname)
+filename = "tekst.txt"
+data_path = path.join(dir_path, filename)
 
-with open(data_path,"r", encoding="utf-8") as f:
-    file_lines = f.readlines()
-    print(file_lines)
+words = count_words(data_path)
+print(f"Liczba słów: {words}")
 
-def ilosc_slow(filename):
-    with open(filename, 'r') as file:
-        ilosc=file.read()
-        ilosc_slow = len(ilosc.split())
-        return ilosc_slow
+def word_stats(filename):
+    with open(filename, 'r', encoding='utf-8') as file:
+        content = file.read()
+        words = content.split()
+        ending_letters = {}
 
-print(ilosc_slow)
+        for word in words:
+            if word[-1] not in ending_letters:
+                ending_letters[word[-1]] = 1
+            else:
+                ending_letters[word[-1]] += 1
+
+        return ending_letters
+
+statistics = word_stats(data_path)
+print("Statystyki liter kończących słowa:")
+for letter, count in statistics.items():
+    print(f"Litera '{letter}': {count}")
